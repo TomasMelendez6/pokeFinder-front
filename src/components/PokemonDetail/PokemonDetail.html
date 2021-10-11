@@ -1,0 +1,37 @@
+<div class="container">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <div
+    v-if="loading"
+    class="loading-overlay d-flex justify-content-center mt-3"
+    >
+    <div id="loading"></div>
+  </div>
+  <div v-else class="row mt-5">
+    <div class="col-lg-1">
+      <router-link to="/Inicio">
+        <button class="colorLetrasNav"><i class="fa fa-arrow-circle-left fa-2x"></i></button>
+      </router-link>
+    </div>
+    <div class="col-lg-4">
+      <vueper-slides fixedHeight="325px">
+        <vueper-slide v-for="(slide) in selectedPokemon.slides"
+          :key="slide.id"
+          :image="slide.image" />
+        <template v-slot:pause>
+          <i class="icon pause_circle_outline"></i>
+        </template>
+      </vueper-slides>
+    </div>
+    <div class="col-lg-6 d-flex justify-content-center ml-5">
+      <div class="row">
+        <h2>name: {{selectedPokemon.name}}</h2>
+        <h3>height: {{selectedPokemon.height}}</h3>
+        <h3>weight: {{selectedPokemon.weight}}</h3>
+      </div>
+    </div>  
+  </div>
+</div>
+
