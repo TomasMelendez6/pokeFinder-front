@@ -5,7 +5,7 @@
         <router-view></router-view>
       </div>
     </div>
-    <FooterTemplate class="foot"/>
+    <FooterTemplate class="footer"/>
   </v-app>
 </template>
 
@@ -29,5 +29,14 @@ export default {
 <style>
   div.v-application--wrap{
     background: #0f161d !important;
+  }
+  /* Fijo el footer al final de la pagina. */
+  body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer{
+      margin-top: auto;
   }
 </style>

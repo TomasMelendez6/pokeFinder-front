@@ -26,9 +26,6 @@ export default {
   },
   methods: {
     async getProductoPorId(){
-      //Llevo el scroll hacia arriba
-      // let elmnt = document.getElementById("app");
-      // elmnt.scrollIntoView();
       try{
         this.loading = true
         await this.$store.dispatch('updatePokemons')
@@ -36,16 +33,22 @@ export default {
 
         this.selectedPokemon = this.filterPokemon()
 
-        console.log(this.selectedPokemon);
-
         let slides = [
           {
             id: 'slide-1',
-            image: this.selectedPokemon.pic1
+            image: this.selectedPokemon.sprites.front_def
           },
           {
             id: 'slide-2',
-            image: this.selectedPokemon.pic2
+            image: this.selectedPokemon.sprites.back_def
+          },
+          {
+            id: 'slide-3',
+            image: this.selectedPokemon.sprites.front_shiny
+          },
+          {
+            id: 'slide-4',
+            image: this.selectedPokemon.sprites.back_shiny
           }
         ]
         this.selectedPokemon.slides = slides
@@ -57,13 +60,10 @@ export default {
     },
 
     filterPokemon(){
-      console.log("ENTRO AL FILTROO");
       let found = {}
       for (let i = 0; i < this.pokemonList.length; i++) {
         const element = this.pokemonList[i];
-        console.log("ELEMENTO: ", element);
         if (element.id == this.id){
-          console.log("ENCONTRE: ", element);
           found = element
         }
       }

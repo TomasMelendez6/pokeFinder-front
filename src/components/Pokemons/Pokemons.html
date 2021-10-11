@@ -31,7 +31,7 @@
           outlined
         >
           <div class="d-flex justify-content-center">
-            <img :src="pokemon.pic1" alt="">
+            <img :src="pokemon.sprites.front_def" alt="">
           </div>
           <div class="d-flex justify-content-center">
             <h2>{{pokemon.name}}</h2>
@@ -39,10 +39,10 @@
           <div class="d-flex justify-content-center mt-4">
             <button
               href="#"
-              class="btn btn-outline-info"
+              class="btn btn-outline-warning"
               @click="pokemonDetail(pokemon.id)"
             >
-              Ver más
+              View
             </button>
           </div>
         </v-card>

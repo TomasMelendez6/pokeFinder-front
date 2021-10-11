@@ -21,10 +21,10 @@ export default {
         button: 'page-link'
       },
       paginationAnchorTexts: {
-        first: 'First',
+        first: 'F',
         prev: '<-',
         next: '->',
-        last: 'Last'
+        last: 'L'
       },
     }
   },

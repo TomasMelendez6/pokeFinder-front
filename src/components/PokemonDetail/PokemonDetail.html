@@ -12,10 +12,10 @@
   <div v-else class="row mt-5">
     <div class="col-lg-1">
       <router-link to="/Inicio">
-        <button class="colorLetrasNav"><i class="fa fa-arrow-circle-left fa-2x"></i></button>
+        <button class="btn btn-outline-warning"><i class="fa fa-arrow-circle-left fa-2x"></i></button>
       </router-link>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-5">
       <vueper-slides fixedHeight="325px">
         <vueper-slide v-for="(slide) in selectedPokemon.slides"
           :key="slide.id"
@@ -25,11 +25,13 @@
         </template>
       </vueper-slides>
     </div>
-    <div class="col-lg-6 d-flex justify-content-center ml-5">
-      <div class="row">
-        <h2>name: {{selectedPokemon.name}}</h2>
-        <h3>height: {{selectedPokemon.height}}</h3>
-        <h3>weight: {{selectedPokemon.weight}}</h3>
+    <div class="col-lg-6 mt-5">
+      <div class="row text-white">
+        <h2 class="d-flex justify-content-center">Name: {{selectedPokemon.name}}</h2>
+        <h3 class="d-flex justify-content-center">Height: {{selectedPokemon.height}}</h3>
+        <h3 class="d-flex justify-content-center">Weight: {{selectedPokemon.weight}}</h3>
+        <div v-if="selectedPokemon.types.length > 1"> <h3 class="d-flex justify-content-center">Types: {{selectedPokemon.types[0]}} & {{selectedPokemon.types[1]}}</h3> </div>
+        <div v-else> <h3 class="d-flex justify-content-center">Type: {{selectedPokemon.types[0]}}</h3> </div>
       </div>
     </div>  
   </div>

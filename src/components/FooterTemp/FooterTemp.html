@@ -1,6 +1,11 @@
 <div
     v-if="!this.$store.state.loading"
-    class="d-flex justify-content-center"
+    class="container d-flex justify-content-center text-white"
   >
-  <h1 >footer Component</h1>
+  <div class="col-9">
+    <h2 >Develop by: Tomas Melendez</h2>
+  </div>
+  <div class="col-3 btn btn-outline-warning">
+    <button @click="goToGithub()" target="_blank">Github</button>
+  </div>
 </div>
