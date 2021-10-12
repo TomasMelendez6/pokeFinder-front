@@ -61,12 +61,11 @@ export default {
 
     filterPokemon(){
       let found = {}
-      for (let i = 0; i < this.pokemonList.length; i++) {
-        const element = this.pokemonList[i];
+      this.pokemonList.forEach(element => {
         if (element.id == this.id){
           found = element
         }
-      }
+      });
       return found
     }
   }
